@@ -1,0 +1,39 @@
+<mat-toolbar class="bg-white shadow-sm sticky-nav">
+  <span>
+    <img src="../../assets/images/Dragster (1).png" alt="dragster logo" width="150px">
+  </span>
+</mat-toolbar>
+<section class="main-section">
+  <div class="card m-2">
+    <h4>ffwefweqd</h4>
+  </div>
+  <div class="card m-2">
+    <div class="row p-0 m-0">
+      <div class="col-12 col-sm-5 col-md-4 col-xl-3 pb-3">
+        <div class="row m-0 p-0">
+          <span class="col-auto col-md-6 mt-2" *ngFor="let ch of chartList">
+            <div matRipple (click)="selectedChart(ch)" [ngClass]="{'ch-card-active': ch.chartSelected}" class="card text-center ch-card mat-elevation-z1 w-50px">
+              <div [ngClass]="{'bottom-bar': ch.chartSelected}"></div>
+              <p class="lead fs-chart">{{ch.chartName}}</p>
+              <mat-progress-bar *ngIf="isChartSelectProgress" class="myspinner" mode="indeterminate"></mat-progress-bar>
+            </div>
+          </span>
+        </div>
+        <!-- <mat-accordion class="example-headers-align" multi>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <span>Chart Options</span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            data
+          </mat-expansion-panel>
+        </mat-accordion> -->
+      </div>
+      <div class="bg-danger col-12 col-sm-7 col-md-8 col-xl-9">
+        d
+      </div>
+    </div>
+
+  </div>
+</section>

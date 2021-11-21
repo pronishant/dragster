@@ -1,0 +1,115 @@
+.myspinner {
+  position: absolute;
+  bottom: 0;
+  border-radius: 4px;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+  // background-color: rgb(0, 157, 255) !important;
+  // color: red !important;
+  background-image: linear-gradient(to right, #007cff, #008fff, #00a1ff, #00b0ff, #00bfff);
+}
+
+.bottom-bar{
+  // padding: 1px;
+  background-color: violet;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+  border-bottom: 3px solid #007cff;
+}
+.ch-card {
+  transition: all 0.1s ease-in-out;
+  border: 1px solid transparent;
+
+  &:hover {
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    // transform: scale(1.03);
+    // border: 1px solid #007cff;
+    background-color: #007cff08;
+    // -webkit-box-shadow: 0px 0px 0px 3px rgba(195, 0, 255, 0.18)!important;
+    // box-shadow: 0px 0px 0px 3px rgba(195, 0, 255, 0.18)!important;
+  }
+}
+
+.ch-card-active{
+  // @extend .ch-card;
+  border: 1px solid #007cff;
+  // background-color: #007bff14;
+}
+
+.fs-chart {
+  font-size: 14px;
+}
+
+.w-50px {
+  width: 100px;
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+}
+
+.main-section {
+  padding-top: 65px;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.drag-list-item {
+  transition: all 0.1s ease-out;
+
+  &:hover {
+    // cursor: pointer;
+    transition: all 0.1s ease-in;
+    background-color: rgb(219, 241, 255);
+  }
+}
+
+.drag-icon {
+  cursor: move;
+  color: #efefef;
+}
+
+.drag-area {
+  // width: 400px;
+  min-height: 100px;
+  max-width: 100%;
+  border: dotted #ccc 1px;
+}
+
+.col-header {
+  border-radius: 0px;
+  border-top: 0px;
+  border-left: 0px;
+  border-color: #00000012;
+}
+
+::ng-deep.mat-expansion-panel-body {
+  padding: 0rem !important;
+}
+
+.hv-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  opacity: 0.4;
+}
