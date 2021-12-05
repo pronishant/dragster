@@ -4,13 +4,13 @@
   </span>
 </mat-toolbar>
 <section class="main-section">
-  <div class="card m-2">
+  <!-- <div class="card m-2">
     <h4>ffwefweqd</h4>
-  </div>
+  </div> -->
   <div class="card m-2">
     <div class="row p-0 m-0">
-      <div class="col-12 col-sm-5 col-md-4 col-xl-3 pb-3">
-        <div class="row m-0 p-0">
+      <div class="col-12 col-sm-5 col-md-4 col-xl-3 pb-3 px-0">
+        <!-- <div class="row m-0 p-0">
           <span class="col-auto col-md-6 mt-2" *ngFor="let ch of chartList">
             <div matRipple (click)="selectedChart(ch)" [ngClass]="{'ch-card-active': ch.chartSelected}" class="card text-center ch-card mat-elevation-z1 w-50px">
               <div [ngClass]="{'bottom-bar': ch.chartSelected}"></div>
@@ -18,20 +18,45 @@
               <mat-progress-bar *ngIf="isChartSelectProgress" class="myspinner" mode="indeterminate"></mat-progress-bar>
             </div>
           </span>
-        </div>
-        <!-- <mat-accordion class="example-headers-align" multi>
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <span>Chart Options</span>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            data
-          </mat-expansion-panel>
-        </mat-accordion> -->
+        </div> -->
+        <button (click)="decrement()">Dec</button>
+        <input type="text" name="d" id="d" [(ngModel)]="myNum">
+        <button (click)="increment()">Inc</button>
+        <mat-accordion class="mat-elevation-z0">
+          <div class="expansion-wrapper">
+            <mat-expansion-panel *ngFor="let ch of chartList" [disabled]="ch.isDisabled">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <span class="icon">
+                    <!-- <i class="fa fa-line-chart me-2"></i> -->
+                    <img src="{{ch.iconPath}}" alt="{{ch.chartName}}" width="18px">
+                  </span>
+                  <span class="ms-2">{{ch.chartName}}</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <!-- <div class="px-2"> -->
+              <div class="row p-0 m-0">
+                <!-- <div class="col-auto"> -->
+                <div matRipple [matRippleColor]="'#00a6ff0f'" (click)="selectedChart(ch.chartName,ch.subCharts,item)" [ngClass]="{'ch-card-active': item.isSelected}" class=" col-6 sub-card card border-white"
+                  *ngFor="let item of ch.subCharts">
+                  <img src="{{item.sChartIconPath}}" alt="fe" width="105px">
+                  <p class="sName">{{item.sChartName}}</p>
+                </div>
+                <!-- </div> -->
+              </div>
+              <!-- </div> -->
+            </mat-expansion-panel>
+          </div>
+        </mat-accordion>
       </div>
-      <div class="bg-danger col-12 col-sm-7 col-md-8 col-xl-9">
-        d
+      <div class=" col-12 col-sm-7 col-md-8 col-xl-9 p-0 m-0">
+        <mat-progress-bar class="myspinner" *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+        <mat-card class="m-2">
+          <app-chart-ui chartData2='dd' chartType='line' chartTitle='Stepline Chart'></app-chart-ui>
+          <!-- <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [markers]="chartOptions.markers"
+            [stroke]="chartOptions.stroke" [dataLabels]="chartOptions.dataLabels" [title]="chartOptions.title">
+          </apx-chart> -->
+        </mat-card>
       </div>
     </div>
 
